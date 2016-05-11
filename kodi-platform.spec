@@ -6,7 +6,7 @@
 
 Name:           kodi-platform
 Version:        16.0
-Release:    	1%{?gver}%{dist}
+Release:    	2%{?gver}%{dist}
 Summary:        Kodi platform environment for compiling cmake binary addons
 
 Group:          Applications/Multimedia
@@ -19,13 +19,9 @@ Source1:	%{name}-snapshot.sh
 BuildRequires:	cmake
 BuildRequires:	tinyxml-devel
 BuildRequires:  libcec-devel
-BuildRequires:	platform-devel
+BuildRequires:	platform-compat-devel
 BuildRequires: 	git
 BuildRequires:	kodi-devel >= 16.0
-Requires:	tinyxml
-Requires:	platform
-Requires:  	libcec
-Requires:	kodi >= 16.0
 
 %description
 Kodi platform environment for compiling cmake binary addons.
@@ -66,6 +62,9 @@ ctest -V %{?_smp_mflags}
 
 
 %changelog
+
+* Wed May 11 2016 David Vasquez <davidjeremias82 at gmail dot com> - 16.0-2-20160305-15edaf7
+- Built with platfom-compat
 
 * Sat Mar 05 2016 David Vasquez <davidjeremias82 at gmail dot com> - 16.0-20160305-15edaf7-1
 - Updated to 16.0-20160305-15edaf7
