@@ -15,11 +15,12 @@ License:        GPLv3 and GPLv2+ and LGPLv2+ and MIT
 URL:            https://github.com/xbmc/kodi-platform
 Source:		%{name}-%{version}-%{snapshot}.tar.xz
 Source1:	%{name}-snapshot.sh
+Patch1:     p8-platform.patch
 
 BuildRequires:	cmake
 BuildRequires:	tinyxml-devel
 BuildRequires:  libcec-devel
-BuildRequires:	platform-compat-devel
+BuildRequires:	platform-devel
 BuildRequires: 	git
 BuildRequires:	kodi-devel >= 16.0
 
@@ -36,6 +37,7 @@ Kodi platform environment devel files
 
 %prep
 %setup -n kodi-platform 
+%patch1 -p1
 
 
 %build
