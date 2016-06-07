@@ -6,7 +6,7 @@
 
 Name:           kodi-platform
 Version:        16.0
-Release:    	2%{?gver}%{dist}
+Release:    	3%{?gver}%{dist}
 Summary:        Kodi platform environment for compiling cmake binary addons
 
 Group:          Applications/Multimedia
@@ -15,7 +15,7 @@ License:        GPLv3 and GPLv2+ and LGPLv2+ and MIT
 URL:            https://github.com/xbmc/kodi-platform
 Source:		%{name}-%{version}-%{snapshot}.tar.xz
 Source1:	%{name}-snapshot.sh
-Patch1:     p8-platform.patch
+Patch1:     	p8-platform.patch
 
 BuildRequires:	cmake
 BuildRequires:	tinyxml-devel
@@ -65,6 +65,10 @@ ctest -V %{?_smp_mflags}
 
 %changelog
 
+* Tue Jun 07 2016 David Vasquez <davidjeremias82 at gmail dot com> - 16.0-3-20160305-15edaf7
+- Changed incoherent release
+- Patches thanks to Sergio Basto
+
 * Wed May 11 2016 David Vasquez <davidjeremias82 at gmail dot com> - 16.0-2-20160305-15edaf7
 - Built with platfom-compat
 
@@ -72,8 +76,8 @@ ctest -V %{?_smp_mflags}
 - Updated to 16.0-20160305-15edaf7
 
 
-* Tue Oct 20 2015 David Vasquez <davidjeremias82 at gmail dot com> - 1.0-20151020-45d6ad1-2
+* Tue Oct 20 2015 David Vasquez <davidjeremias82 at gmail dot com> - 1.0-2-20151020-45d6ad1
 - Updated to 1.0-20151020-45d6ad1
 
-* Wed May 20 2015 David Vasquez <davidjeremias82 at gmail dot com> - 1.0-20150520-33b6390-1
+* Wed May 20 2015 David Vasquez <davidjeremias82 at gmail dot com> - 1.0-1-20150520-33b6390
 - Initial build rpm
