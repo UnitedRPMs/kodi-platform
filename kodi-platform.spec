@@ -6,7 +6,7 @@
 
 Name:           kodi-platform
 Version:        16.0
-Release:    	3%{?gver}%{dist}
+Release:    	4%{?gver}%{dist}
 Summary:        Kodi platform environment for compiling cmake binary addons
 
 Group:          Applications/Multimedia
@@ -64,6 +64,9 @@ ctest -V %{?_smp_mflags}
 
 
 %changelog
+
+* Fri Jul 08 2016 David Vásquez <davidjeremias82 AT gmail DOT com> - 16.0-4-20160305-15edaf7
+- Massive rebuild
 
 * Tue Jun 07 2016 David Vasquez <davidjeremias82 at gmail dot com> - 16.0-3-20160305-15edaf7
 - Changed incoherent release
