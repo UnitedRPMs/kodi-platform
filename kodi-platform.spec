@@ -1,12 +1,12 @@
-#globals for kodi-platform-16.0-20160305-15edaf7.tar.xz
-%global gitdate 20160305
-%global gitversion 15edaf7
+#globals for kodi-platform-17.0-20161016-c8188d8.tar.xz
+%global gitdate 20161016
+%global gitversion c8188d8
 %global snapshot %{gitdate}-%{gitversion}
 %global gver .%{gitdate}git%{gitversion}
 
 Name:           kodi-platform
-Version:        16.0
-Release:    	4%{?gver}%{dist}
+Version:        17.0
+Release:    	1%{?gver}%{dist}
 Summary:        Kodi platform environment for compiling cmake binary addons
 
 Group:          Applications/Multimedia
@@ -15,14 +15,14 @@ License:        GPLv3 and GPLv2+ and LGPLv2+ and MIT
 URL:            https://github.com/xbmc/kodi-platform
 Source:		%{name}-%{version}-%{snapshot}.tar.xz
 Source1:	%{name}-snapshot.sh
-Patch1:     	p8-platform.patch
+#Patch1:     	p8-platform.patch
 
 BuildRequires:	cmake
 BuildRequires:	tinyxml-devel
 BuildRequires:  libcec-devel
 BuildRequires:	platform-devel
 BuildRequires: 	git
-BuildRequires:	kodi-devel >= 16.0
+BuildRequires:	kodi-devel >= 17.0
 
 %description
 Kodi platform environment for compiling cmake binary addons.
@@ -37,11 +37,12 @@ Kodi platform environment devel files
 
 %prep
 %setup -n kodi-platform 
-%patch1 -p1
+#patch1 -p1
 
 
 %build
-%cmake .
+
+%cmake CMAKE_PREFIX_PATH=%{_libdir}/kodi/ .
 make %{?_smp_mflags}
 
 
@@ -64,6 +65,9 @@ ctest -V %{?_smp_mflags}
 
 
 %changelog
+
+* Sun Oct 16 2016 David Vásquez <davidjeremias82 AT gmail DOT com> - 17.0-1-20161016gitc8188d8
+- Updated
 
 * Fri Jul 08 2016 David Vásquez <davidjeremias82 AT gmail DOT com> - 16.0-4-20160305-15edaf7
 - Massive rebuild
