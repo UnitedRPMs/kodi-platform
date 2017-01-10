@@ -1,21 +1,20 @@
-#globals for kodi-platform-17.0-20161016-c8188d8.tar.xz
+%global commit0 c8188d82678fec6b784597db69a68e74ff4986b5
+%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gitdate 20161016
-%global gitversion c8188d8
-%global snapshot %{gitdate}-%{gitversion}
-%global gver .%{gitdate}git%{gitversion}
+%global gver .%{gitdate}git%{shortcommit0}
 
 Name:           kodi-platform
 Version:        17.0
-Release:    	1%{?gver}%{dist}
+Release:    	  2%{?gver}%{dist}
 Summary:        Kodi platform environment for compiling cmake binary addons
 
 Group:          Applications/Multimedia
 
 License:        GPLv3 and GPLv2+ and LGPLv2+ and MIT
 URL:            https://github.com/xbmc/kodi-platform
-Source:		%{name}-%{version}-%{snapshot}.tar.xz
-Source1:	%{name}-snapshot.sh
-#Patch1:     	p8-platform.patch
+Source0:        https://github.com/xbmc/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+#Source1:	      %{name}-snapshot.sh
+#Patch1:     	  p8-platform.patch
 
 BuildRequires:	cmake
 BuildRequires:	tinyxml-devel
@@ -36,7 +35,8 @@ Requires:       %{name} = %{version}-%{release}
 Kodi platform environment devel files
 
 %prep
-%setup -n kodi-platform 
+%autosetup -n %{name}-%{commit0}
+#%setup -n kodi-platform 
 #patch1 -p1
 
 
@@ -65,6 +65,9 @@ ctest -V %{?_smp_mflags}
 
 
 %changelog
+* Tue Jan 10 2017 Pavlo Rudyi <paulcarroty at riseup.net> - 17.0-2
+- Rebuild
+- Added sources
 
 * Sun Oct 16 2016 David Vásquez <davidjeremias82 AT gmail DOT com> - 17.0-1-20161016gitc8188d8
 - Updated
