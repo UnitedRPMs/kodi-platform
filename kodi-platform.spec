@@ -19,7 +19,7 @@ BuildRequires:	tinyxml-devel
 BuildRequires:  libcec-devel
 BuildRequires:	platform-devel
 BuildRequires: 	git
-BuildRequires:	kodi-devel >= 17.0
+BuildRequires:	kodi-devel >= 17.2
 
 %description
 Kodi platform environment for compiling cmake binary addons.
