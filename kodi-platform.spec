@@ -4,8 +4,8 @@
 %global gver .git%{shortcommit0}
 
 Name:           kodi-platform
-Version:        17.4
-Release:    	2%{?gver}%{dist}
+Version:        17.5
+Release:    	1%{?gver}%{dist}
 Summary:        Kodi platform environment for compiling cmake binary addons
 
 Group:          Applications/Multimedia
@@ -63,6 +63,12 @@ ctest -V %{?_smp_mflags}
 
 
 %changelog
+
+* Sun Oct 22 2017 Unitedrpms Project <unitedrpms AT protonmail DOT com> - 17.5-1.git36fb493
+- Updated to 17.5-1.git36fb493
+
+* Wed Oct 18 2017 Unitedrpms Project <unitedrpms AT protonmail DOT com> 17.4-2.01.git36fb493  
+- Automatic Mass Rebuild
 
 * Fri Sep 01 2017 David Vásquez <davidva AT tutanota DOT com> - 17.4-2.git36fb493
 - Rebuilt for Kodi cmake
