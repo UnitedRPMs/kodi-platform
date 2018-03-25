@@ -1,10 +1,10 @@
-%global commit0 36fb49371dbce49bf470a5bb1fc51b74b4a3612d
+%global commit0 e8574b883ffa2131f2eeb96ff3724d60b21130f7
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gitdate 20170524
 %global gver .git%{shortcommit0}
 
 Name:           kodi-platform
-Version:        17.5
+Version:        18.0
 Release:    	1%{?gver}%{dist}
 Summary:        Kodi platform environment for compiling cmake binary addons
 
@@ -19,7 +19,7 @@ BuildRequires:	tinyxml-devel
 BuildRequires:  libcec-devel
 BuildRequires:	platform-devel
 BuildRequires: 	git
-BuildRequires:	kodi-devel >= 17.2
+BuildRequires:	kodi-devel >= 18
 
 %description
 Kodi platform environment for compiling cmake binary addons.
@@ -63,6 +63,9 @@ ctest -V %{?_smp_mflags}
 
 
 %changelog
+
+* Wed Mar 21 2018 Unitedrpms Project <unitedrpms AT protonmail DOT com> - 18.0-1.gite8574b8
+- Updated to 18.0-1.gite8574b8
 
 * Sun Oct 22 2017 Unitedrpms Project <unitedrpms AT protonmail DOT com> - 17.5-1.git36fb493
 - Updated to 17.5-1.git36fb493
