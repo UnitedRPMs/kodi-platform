@@ -14,6 +14,7 @@ License:        GPLv3 and GPLv2+ and LGPLv2+ and MIT
 URL:            https://github.com/xbmc/kodi-platform
 Source0:        https://github.com/xbmc/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
+BuildRequires:  gcc-c++
 BuildRequires:	cmake
 BuildRequires:	tinyxml-devel
 BuildRequires:  libcec-devel
