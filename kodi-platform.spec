@@ -5,7 +5,7 @@
 
 Name:           kodi-platform
 Version:        18.0
-Release:    	  4%{?gver}%{dist}
+Release:    	  5%{?gver}%{dist}
 Summary:        Kodi platform environment for compiling cmake binary addons
 
 Group:          Applications/Multimedia
@@ -63,6 +63,9 @@ ctest -V %{?_smp_mflags}
 
 
 %changelog
+
+* Sat Oct 13 2018 Unitedrpms Project <unitedrpms AT protonmail DOT com> 18.0-5.gite8574b8  
+- Automatic Mass Rebuild
 
 * Wed Sep 05 2018 Unitedrpms Project <unitedrpms AT protonmail DOT com> 18.0-4.gite8574b8  
 - Automatic Mass Rebuild
