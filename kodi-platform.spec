@@ -19,7 +19,7 @@ BuildRequires:	cmake
 BuildRequires:	tinyxml-devel
 BuildRequires:  libcec-devel
 BuildRequires:	platform-devel
-BuildRequires: 	git
+BuildRequires:  git
 BuildRequires:	kodi-devel >= 18
 
 %description
