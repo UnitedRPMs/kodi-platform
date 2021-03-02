@@ -1,11 +1,11 @@
-%global commit0 e8574b883ffa2131f2eeb96ff3724d60b21130f7
+%global commit0 809c5e9d711e378561440a896fcb7dbcd009eb3d
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gitdate 20170524
 %global gver .git%{shortcommit0}
 
 Name:           kodi-platform
 Version:        18.0
-Release:    	6%{?gver}%{dist}
+Release:    	7%{?gver}%{dist}
 Summary:        Kodi platform environment for compiling cmake binary addons
 
 Group:          Applications/Multimedia
@@ -20,7 +20,7 @@ BuildRequires:	tinyxml-devel
 BuildRequires:  libcec-devel
 BuildRequires:	platform-devel
 BuildRequires:  git
-BuildRequires:	kodi-devel >= 18
+BuildRequires:	kodi-devel >= 1:19.0
 
 %description
 Kodi platform environment for compiling cmake binary addons.
@@ -28,7 +28,7 @@ Kodi platform environment for compiling cmake binary addons.
 %package devel
 Summary:        Kodi platform environment devel files
 Group:          Development/Languages/C and C++
-Requires:       %{name} = %{version}-%{release}
+Requires:       %{name} >= %{version}-%{release}
 
 %description devel
 Kodi platform environment devel files
@@ -40,13 +40,15 @@ Kodi platform environment devel files
 
 
 %build
+mkdir build
 
-%cmake CMAKE_PREFIX_PATH=%{_libdir}/kodi/ .
-make %{?_smp_mflags} VERBOSE=0
+%cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=%{_libdir}/kodi/ -B build 
+
+%make_build -C build 
 
 
 %install
-make install DESTDIR=%{buildroot}
+%make_install -C build
 
 
 %check
@@ -64,6 +66,9 @@ ctest -V %{?_smp_mflags}
 
 
 %changelog
+
+* Sun Feb 28 2021 Unitedrpms Project <unitedrpms AT protonmail DOT com> 18.0-7.git809c5e9  
+- Updated to current commit 
 
 * Sun Feb 03 2019 Unitedrpms Project <unitedrpms AT protonmail DOT com> 18.0-6.gite8574b8  
 - Automatic Mass Rebuild
