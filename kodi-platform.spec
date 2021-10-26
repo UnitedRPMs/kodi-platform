@@ -5,7 +5,7 @@
 
 Name:           kodi-platform
 Version:        18.0
-Release:    	7%{?gver}%{dist}
+Release:    	8%{?gver}%{dist}
 Summary:        Kodi platform environment for compiling cmake binary addons
 
 Group:          Applications/Multimedia
@@ -20,7 +20,7 @@ BuildRequires:	tinyxml-devel
 BuildRequires:  libcec-devel
 BuildRequires:	platform-devel
 BuildRequires:  git
-BuildRequires:	kodi-devel >= 1:19.0
+BuildRequires:	kodi-devel >= 1:19.2
 
 %description
 Kodi platform environment for compiling cmake binary addons.
@@ -66,6 +66,9 @@ ctest -V %{?_smp_mflags}
 
 
 %changelog
+
+* Sun Oct 24 2021 Unitedrpms Project <unitedrpms AT protonmail DOT com> 18.0-8.git809c5e9  
+- Rebuilt for Kodi
 
 * Sun Feb 28 2021 Unitedrpms Project <unitedrpms AT protonmail DOT com> 18.0-7.git809c5e9  
 - Updated to current commit 
